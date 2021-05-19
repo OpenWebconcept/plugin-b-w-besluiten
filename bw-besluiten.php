@@ -20,6 +20,9 @@ if (!defined('WPINC')) {
     die;
 }
 
+define('BW_DIR', basename(__DIR__));
+define('BW_FILE', basename(__FILE__));
+
 /**
  * Manual loaded file: the autoloader.
  */
@@ -41,6 +44,11 @@ $autoloader = new OWC\Besluiten\Autoloader();
 });
 
 /**
+ * Register activation and de-activation hook.
+ */
+OWC\Besluiten\Foundation\Plugin::setupAndTeardown();
+
+/**
  * Begin execution of the plugin
  *
  * This hook is called once any activated plugins have been loaded. Is generally used for immediate filter setup, or
@@ -48,5 +56,6 @@ $autoloader = new OWC\Besluiten\Autoloader();
  * and wp_loaded action hooks.
  */
 \add_action('plugins_loaded', function () {
-    $plugin = (new OWC\Besluiten\Foundation\Plugin(__DIR__))->boot();
+    $plugin = new OWC\Besluiten\Foundation\Plugin(__DIR__);
+    $plugin->boot();
 }, 10);

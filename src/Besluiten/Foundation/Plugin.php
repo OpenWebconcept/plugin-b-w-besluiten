@@ -2,6 +2,8 @@
 
 namespace OWC\Besluiten\Foundation;
 
+use OWC\Besluiten\Expiration\ExpirationController;
+
 /**
  * BasePlugin which sets all the serviceproviders.
  */
@@ -62,6 +64,25 @@ class Plugin
         $this->config->boot();
     }
 
+    public static function setupAndTeardown(): void
+    {
+        /**
+         * The code that runs during plugin activation.
+         */
+        \register_activation_hook(BW_DIR . '/' . BW_FILE, function () {
+            (new Activator())->activate();
+        });
+
+        \add_action('delete_expired_public_decisions', [ExpirationController::class, 'deleteExpiredPosts'], 10, 0);
+
+        /**
+         * The code that runs during plugin deactivation.
+         */
+        \register_deactivation_hook(BW_DIR . '/' . BW_FILE, function () {
+            (new Deactivator())->deactivate();
+        });
+    }
+
     /**
      * Boot the plugin.
      *
@@ -80,19 +101,10 @@ class Plugin
             return false;
         }
 
-        // Set up service providers
+        // Set up service providers.
         $this->callServiceProviders('register');
 
-        if (is_admin()) {
-            // $this->callServiceProviders('register', 'admin');
-            // $this->callServiceProviders('boot', 'admin');
-        }
-
-        if ('cli' === php_sapi_name()) {
-            // $this->callServiceProviders('register', 'cli');
-            // $this->callServiceProviders('boot', 'cli');
-        }
-
+        // Boot service providers.
         $this->callServiceProviders('boot');
 
         // Register the Hook loader.
