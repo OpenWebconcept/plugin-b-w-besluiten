@@ -56,25 +56,25 @@ class Besluit extends AbstractRepository
     }
 
     /**
-     * Add tax query to current query.
-     *
-     * @param string $type
+     * Remove expired posts from the query object.
      *
      * @return array
      */
-    public static function addFilterTypeParameters(string $type = ''): array
+    public static function addFilterExpirationDateParameters(): array
     {
-        if (empty($type)) {
-            return [];
-        }
-
         return [
-            'tax_query' => [
+            'meta_query' => [
+                'relation' => 'OR',
                 [
-                    'taxonomy' => 'press_mailing_list',
-                    'terms'    => $type,
-                    'field'    => 'slug'
-                ]
+                    'key' => '_owc_public_decisions_expiration_date',
+                    'value' => date('Y-m-d H:i:s'),
+                    'compare' => '>',
+                    'type' => 'DATE'
+                ],
+                [
+                    'key' => '_owc_public_decisions_expiration_date',
+                    'compare' => 'NOT EXISTS',
+                ],
             ]
         ];
     }
