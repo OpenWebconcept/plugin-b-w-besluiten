@@ -19,7 +19,8 @@ return [
                         'dateFormat'      => 'dd-mm-yy',
                         'showTimepicker'  => true,
                     ],
-                    'std' => (new \DateTime('now', new DateTimeZone('Europe/Amsterdam')))->modify('+4 week')->format('d-m-Y H:i') // staat nu automatisch, als status niet publish is dan weer leeghalen
+                    'save_format' => 'Y-m-d H:i:s',
+                    'std' => (new \DateTime('now', new DateTimeZone('Europe/Amsterdam')))->modify('+4 week')->format('d-m-Y H:i')
                 ]
             ]
         ]
