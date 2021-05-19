@@ -81,12 +81,15 @@ class RestAPIServiceProvider extends ServiceProvider
         foreach ($this->plugin->config->get('api.models') as $posttype => $data) {
             foreach ($data['fields'] as $key => $creator) {
                 $class = '\OWC\Besluiten\Repositories\\' . ucfirst($posttype);
-                if (class_exists($class)) {
-                    $creator = new $creator($this->plugin);
-                    $class::addGlobalField($key, $creator, function () use ($creator) {
-                        return $creator->executeCondition()();
-                    });
+
+                if (!class_exists($class)) {
+                    continue;
                 }
+
+                $creator = new $creator($this->plugin);
+                $class::addGlobalField($key, $creator, function () use ($creator) {
+                    return $creator->executeCondition()();
+                });
             }
         }
     }
