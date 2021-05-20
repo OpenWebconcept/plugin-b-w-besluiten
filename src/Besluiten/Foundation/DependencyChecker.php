@@ -105,7 +105,7 @@ class DependencyChecker
     private function checkClass(array $dependency)
     {
         if (!class_exists($dependency['name'])) {
-            $this->markFailed($dependency, __('Class does not exist', 'public-decisions'));
+            $this->markFailed($dependency, __('Class does not exist', 'bw-besluiten'));
 
             return;
         }
@@ -125,7 +125,7 @@ class DependencyChecker
         }
 
         if (!is_plugin_active($dependency['file'])) {
-            $this->markFailed($dependency, __('Inactive', 'public-decisions'));
+            $this->markFailed($dependency, __('Inactive', 'bw-besluiten'));
 
             return;
         }
@@ -133,7 +133,7 @@ class DependencyChecker
         // If there is a version lock set on the dependency...
         if (isset($dependency['version'])) {
             if (!$this->checkVersion($dependency)) {
-                $this->markFailed($dependency, __('Minimal version:', 'public-decisions') . ' <b>' . $dependency['version'] . '</b>');
+                $this->markFailed($dependency, __('Minimal version:', 'bw-besluiten') . ' <b>' . $dependency['version'] . '</b>');
             }
         }
     }

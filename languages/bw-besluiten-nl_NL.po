@@ -1,0 +1,79 @@
+#: config/metaboxes.php:7
+msgid "Data"
+msgstr "Gegevens"
+
+#: config/metaboxes.php:14
+msgid "Expiration date"
+msgstr "Datum van verlopen"
+
+#: config/metaboxes.php:15
+msgid "The default value of this field is set to a date four weeks from now. The value of this field is only saved when the status of this post is set to 'publish'. If the post status, after saving, is not 'publish' the value will be cleared."
+msgstr "De standaard waarde van dit veld staat op 4 weken van vandaag. De waarde van dit veld wordt alleen opgeslagen als de status van deze post op 'publiceren' staat. Als de status niet op 'publiceren' staat wordt deze waarde weer geleegd."
+
+#: config/posttypes.php:30 config/posttypes.php:48
+msgid "Public decision"
+msgstr "Openbaar besluit"
+
+#: config/posttypes.php:31 config/posttypes.php:49 config/posttypes.php:50 config/settings_pages.php:7 config/settings_pages.php:11 config/settings_pages.php:15 config/settings.php:6
+msgid "Public decisions"
+msgstr "Openbare besluiten"
+
+#: config/posttypes.php:32 config/posttypes.php:35
+msgid "New public decision"
+msgstr "Nieuw openbaar besluit"
+
+#: config/posttypes.php:33
+msgid "Add new public decision"
+msgstr "Voeg nieuwe openbaar besluit toe"
+
+#: config/posttypes.php:34
+msgid "Add public decision"
+msgstr "Voeg openbaar besluit toe"
+
+#: config/posttypes.php:36
+msgid "Edit public decision"
+msgstr "Wijzig openbaar besluit"
+
+#: config/posttypes.php:37
+msgid "View public decision"
+msgstr "Bekijk openbaar besluit"
+
+#: config/posttypes.php:38
+msgid "All public decisions"
+msgstr "Alle openbare besluiten"
+
+#: config/posttypes.php:39
+msgid "Search public decision"
+msgstr "Zoek openbaar besluit"
+
+#: config/posttypes.php:40
+msgid "Parent public decision:"
+msgstr "Hoofd openbaar besluit:"
+
+#: config/posttypes.php:41
+msgid "No public decisions found."
+msgstr "Geen openbare besluiten gevonden."
+
+#: config/posttypes.php:42
+msgid "No public decisions found in trash."
+msgstr "Geen openbare besluiten in de prullenbak."
+
+#: config/settings_pages.php:13
+msgid "Save"
+msgstr "Opslaan"
+
+#: config/settings.php:12
+msgid "Portal URL"
+msgstr "Portal URL"
+
+#: config/settings.php:
+msgid "URL including http(s)://"
+msgstr "URL inclusief http(s)://"
+
+#: config/settings.php:18
+msgid "Portal public decisions item slug"
+msgstr "Portal openbare besluiten item slug"
+
+#: config/settings.php:19
+msgid "URL for public decisions items in the portal, eg \"besluiten\""
+msgstr "URL voor openbare besluiten in de portal, bv \"besluiten\""

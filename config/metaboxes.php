@@ -3,7 +3,7 @@
 return [
     'public_decisions' => [
         'id'         => 'public_decisions_metadata',
-        'title'      => __('Data', 'public-decisions'),
+        'title'      => __('Data', 'bw-besluiten'),
         'post_types' => ['public-decision'],
         'context'    => 'normal',
         'priority'   => 'high',
@@ -11,8 +11,8 @@ return [
         'fields'     => [
             'general'   => [
                 'expiration' => [
-                    'name' => __('Expiration date', 'public-decisions'),
-                    'desc' => __("The default value of this field is set to a date four weeks from now. The value of this field is only saved when the status of this post is set to 'publish'. If the post status, after saving, is not 'publish' the value will be cleared.", 'public-decisions'),
+                    'name' => __('Expiration date', 'bw-besluiten'),
+                    'desc' => __("The default value of this field is set to a date four weeks from now. The value of this field is only saved when the status of this post is set to 'publish'. If the post status, after saving, is not 'publish' the value will be cleared.", 'bw-besluiten'),
                     'id'   => 'public_decisions_expiration_date',
                     'type' => 'datetime',
                     'js_options' => [
