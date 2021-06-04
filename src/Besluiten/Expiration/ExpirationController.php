@@ -14,7 +14,7 @@ class ExpirationController
      * 
      * @return void
      */
-    public function afterMetaUpdate(int $metaID, int $postID, string $metaKey, string $metaValue): void
+    public function afterMetaUpdate(int $metaID, int $postID, string $metaKey, $metaValue): void
     {
         $post = get_post($postID);
 
