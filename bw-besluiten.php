@@ -22,6 +22,7 @@ if (!defined('WPINC')) {
 
 define('BW_DIR', basename(__DIR__));
 define('BW_FILE', basename(__FILE__));
+define('BW_VERSION', '1.0.0');
 
 /**
  * Manual loaded file: the autoloader.
@@ -30,17 +31,18 @@ require_once __DIR__ . '/autoloader.php';
 $autoloader = new OWC\Besluiten\Autoloader();
 
 /**
- * Nalopen!!
- * Plugin wordt als laatst opgestart. Omdat de pub eerst geladen moet zijn om de settings pagina te laten werken.
+ * Plugin will be activated as last. 
+ * If the openpub-base plugin is used it should be activated first for the combined settings page to work.
  */
 \add_action("activated_plugin", function () {
-    $wp_path_to_this_file = preg_replace('/(.*)plugins\/(.*)$/', WP_PLUGIN_DIR . "/$2", __FILE__);
-    $this_plugin = plugin_basename(trim($wp_path_to_this_file));
-    $active_plugins = get_option('active_plugins');
-    $this_plugin_key = array_search($this_plugin, $active_plugins);
-    array_splice($active_plugins, $this_plugin_key, 1);
-    array_push($active_plugins, $this_plugin);
-    update_option('active_plugins', $active_plugins);
+    $currentFile    = preg_replace('/(.*)plugins\/(.*)$/', WP_PLUGIN_DIR . "/$2", __FILE__);
+    $plugin         = plugin_basename(trim($currentFile));
+    $activePlugins  = get_option('active_plugins');
+    $pluginKey      = array_search($plugin, $activePlugins);
+
+    array_splice($activePlugins, $pluginKey, 1);
+    array_push($activePlugins, $plugin);
+    update_option('active_plugins', $activePlugins);
 });
 
 /**

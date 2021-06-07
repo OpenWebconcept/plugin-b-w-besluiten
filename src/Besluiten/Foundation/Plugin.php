@@ -22,7 +22,7 @@ class Plugin
      *
      * @var string VERSION
      */
-    const VERSION = '1.0.0';
+    const VERSION = BW_VERSION;
 
     /**
      * Path to the root of the plugin.
