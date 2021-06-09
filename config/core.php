@@ -9,7 +9,8 @@ return [
         OWC\Besluiten\PostType\PostTypeServiceProvider::class,
         OWC\Besluiten\Metabox\MetaboxServiceProvider::class,
         OWC\Besluiten\Settings\SettingsServiceProvider::class,
-        OWC\Besluiten\Expiration\ExpirationServiceProvider::class
+        OWC\Besluiten\Expiration\ExpirationServiceProvider::class,
+        OWC\Besluiten\Taxonomy\TaxonomyServiceProvider::class
     ],
 
     /**

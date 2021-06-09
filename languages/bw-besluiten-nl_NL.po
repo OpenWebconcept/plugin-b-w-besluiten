@@ -77,3 +77,11 @@ msgstr "Portal openbare besluiten item slug"
 #: config/settings.php:19
 msgid "URL for public decisions items in the portal, eg \"besluiten\""
 msgstr "URL voor openbare besluiten in de portal, bv \"besluiten\""
+
+#: config/taxonomies.php:15
+msgid "Category"
+msgstr "Categorie"
+
+#: config/taxonomies.php:16
+msgid "Categories"
+msgstr "Categorie&euml;n"
