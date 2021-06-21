@@ -1,3 +1,9 @@
+## [1.0.2]
+
+### Features
+
+-   Add connected public-decisions, in api, based on taxonomy (public-decision-category)
+
 ## [1.0.1]
 
 ### Features
