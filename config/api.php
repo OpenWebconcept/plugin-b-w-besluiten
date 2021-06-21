@@ -10,8 +10,10 @@ return [
          *      'condition' => \Closure
          * ]
          */
-        'besluiten'   => [
-            'fields' => [],
+        'besluit'   => [
+            'fields' => [
+                'connected' => OWC\Besluiten\RestAPI\ItemFields\ConnectedField::class
+            ],
         ]
     ],
 ];

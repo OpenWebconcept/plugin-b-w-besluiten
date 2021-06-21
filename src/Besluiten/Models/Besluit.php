@@ -47,7 +47,7 @@ class Besluit
      *
      * @param \WP_Post $post
      *
-     * @return Persbericht
+     * @return Besluit
      */
     public static function makeFrom(\WP_Post $post)
     {
