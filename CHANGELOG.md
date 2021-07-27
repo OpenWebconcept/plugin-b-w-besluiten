@@ -1,3 +1,11 @@
+# CHANGELOG
+
+## [1.0.3]
+
+### Features
+
+-   Add expired field to API
+
 ## [1.0.2]
 
 ### Features

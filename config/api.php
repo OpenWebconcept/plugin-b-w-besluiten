@@ -12,6 +12,7 @@ return [
          */
         'besluit'   => [
             'fields' => [
+                'expired'   => OWC\Besluiten\RestAPI\ItemFields\ExpiredField::class,
                 'connected' => OWC\Besluiten\RestAPI\ItemFields\ConnectedField::class
             ],
         ]

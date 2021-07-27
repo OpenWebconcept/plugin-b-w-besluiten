@@ -4,7 +4,7 @@
  * Plugin Name:       Yard | B&W Besluiten
  * Plugin URI:        https://www.openwebconcept.nl/
  * Description:       Mayor and City Counsel Members decisions plug-in enables municipalities to create posts based on the public decisions taken during their weekly meetings.
- * Version:           1.0.2
+ * Version:           1.0.3
  * Author:            Yard | Digital Agency
  * Author URI:        https://www.yard.nl/
  * License:           GPL-3.0
@@ -22,7 +22,7 @@ if (!defined('WPINC')) {
 
 define('BW_DIR', basename(__DIR__));
 define('BW_FILE', basename(__FILE__));
-define('BW_VERSION', '1.0.2');
+define('BW_VERSION', '1.0.3');
 
 /**
  * Manual loaded file: the autoloader.
@@ -31,7 +31,7 @@ require_once __DIR__ . '/autoloader.php';
 $autoloader = new OWC\Besluiten\Autoloader();
 
 /**
- * Plugin will be activated as last. 
+ * Plugin will be activated as last.
  * If the openpub-base plugin is used it should be activated first for the combined settings page to work.
  */
 \add_action("activated_plugin", function () {

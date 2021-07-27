@@ -19,7 +19,7 @@ class MetaboxServiceProvider extends MetaboxBaseServiceProvider
     public function registerMetaboxes($rwmbMetaboxes)
     {
         $configMetaboxes  = $this->plugin->config->get('metaboxes');
-        $metaboxes = [];
+        $metaboxes        = [];
 
         foreach ($configMetaboxes as $metabox) {
             $metaboxes[] = $this->processMetabox($metabox);

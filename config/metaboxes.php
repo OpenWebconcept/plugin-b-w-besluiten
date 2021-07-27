@@ -11,16 +11,16 @@ return [
         'fields'     => [
             'general'   => [
                 'expiration' => [
-                    'name' => __('Expiration date', 'bw-besluiten'),
-                    'desc' => __("The default value of this field is set to a date four weeks from now. The value of this field is only saved when the status of this post is set to 'publish'. If the post status, after saving, is not 'publish' the value will be cleared.", 'bw-besluiten'),
-                    'id'   => 'public_decisions_expiration_date',
-                    'type' => 'datetime',
+                    'name'       => __('Expiration date', 'bw-besluiten'),
+                    'desc'       => __("The default value of this field is set to a date four weeks from now. The value of this field is only saved when the status of this post is set to 'publish'. If the post status, after saving, is not 'publish' the value will be cleared.", 'bw-besluiten'),
+                    'id'         => 'public_decisions_expiration_date',
+                    'type'       => 'datetime',
                     'js_options' => [
                         'dateFormat'      => 'dd-mm-yy',
                         'showTimepicker'  => true,
                     ],
                     'save_format' => 'Y-m-d H:i:s',
-                    'std' => (new \DateTime('now', new DateTimeZone('Europe/Amsterdam')))->modify('+4 week')->format('d-m-Y H:i')
+                    'std'         => (new \DateTime('now', new DateTimeZone('Europe/Amsterdam')))->modify('+4 week')->format('d-m-Y H:i')
                 ]
             ]
         ]

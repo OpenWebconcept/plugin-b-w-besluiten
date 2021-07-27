@@ -12,15 +12,10 @@ use WP_Query;
 class ConnectedField extends CreatesFields
 {
     /**
-     * Instance of the Plugin.
-     *
      * @var Plugin
      */
     protected $plugin;
 
-    /**
-     * @param Plugin $plugin
-     */
     public function __construct(Plugin $plugin)
     {
         $this->plugin      = $plugin;
@@ -29,10 +24,6 @@ class ConnectedField extends CreatesFields
 
     /**
      * Creates an array of connected posts.
-     *
-     * @param WP_Post $post
-     *
-     * @return array
      */
     public function create(WP_Post $post): array
     {
@@ -42,11 +33,6 @@ class ConnectedField extends CreatesFields
         return $this->getConnectedItems($categoriesIDs, $besluit->getID());
     }
 
-    /**
-     * @param BesluitModel $besluit
-     *
-     * @return array
-     */
     protected function getCategoriesIDs(BesluitModel $besluit): array
     {
         $terms = $besluit->getTerms('public-decision-category');
@@ -62,11 +48,6 @@ class ConnectedField extends CreatesFields
 
     /**
      * Get connected items and exclude current post.
-     *
-     * @param array $categoriesIDs
-     * @param integer $besluitID
-     *
-     * @return array
      */
     protected function getConnectedItems(array $categoriesIDs, int $besluitID): array
     {
@@ -88,7 +69,8 @@ class ConnectedField extends CreatesFields
                 'content'           => $besluit->getContent(),
                 'excerpt'           => $besluit->getExcerpt(),
                 'slug'              => $besluit->getPostName(),
-                'type'              => $besluit->getPostType()
+                'type'              => $besluit->getPostType(),
+                'expired'           => (new ExpiredField($this->plugin))->create($post)
             ];
         }, $items);
     }

@@ -1,4 +1,27 @@
-#: config/metaboxes.php:7
+msgid ""
+msgstr ""
+"Project-Id-Version: Yard | B&W Besluiten\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-07-27 09:47+0200\n"
+"PO-Revision-Date: 2021-07-27 09:47+0200\n"
+"Last-Translator: Edwin Siebel <edwin@yard.nl>\n"
+"Language-Team: Yard | Digital Agency <info@yard.nl>\n"
+"Language: nl_NL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: config\n"
+"X-Poedit-SearchPath-1: src\n"
+"X-Poedit-SearchPathExcluded-0: vendor\n"
+
+#: config/metaboxes.php:6
 msgid "Data"
 msgstr "Gegevens"
 
@@ -7,14 +30,28 @@ msgid "Expiration date"
 msgstr "Datum van verlopen"
 
 #: config/metaboxes.php:15
-msgid "The default value of this field is set to a date four weeks from now. The value of this field is only saved when the status of this post is set to 'publish'. If the post status, after saving, is not 'publish' the value will be cleared."
-msgstr "De standaard waarde van dit veld staat op 4 weken van vandaag. De waarde van dit veld wordt alleen opgeslagen als de status van deze post op 'publiceren' staat. Als de status niet op 'publiceren' staat wordt deze waarde weer geleegd."
+msgid ""
+"The default value of this field is set to a date four weeks from now. The "
+"value of this field is only saved when the status of this post is set to "
+"'publish'. If the post status, after saving, is not 'publish' the value will "
+"be cleared."
+msgstr ""
+"De standaard waarde van dit veld staat op 4 weken van vandaag. De waarde van "
+"dit veld wordt alleen opgeslagen als de status van deze post op 'publiceren' "
+"staat. Als de status niet op 'publiceren' staat wordt deze waarde weer "
+"geleegd."
+
+#: config/posttypes.php:23
+msgid "Published"
+msgstr "Gepubliceerd"
 
 #: config/posttypes.php:30 config/posttypes.php:48
 msgid "Public decision"
 msgstr "Openbaar besluit"
 
-#: config/posttypes.php:31 config/posttypes.php:49 config/posttypes.php:50 config/settings_pages.php:7 config/settings_pages.php:11 config/settings_pages.php:15 config/settings.php:6
+#: config/posttypes.php:31 config/posttypes.php:49 config/posttypes.php:50
+#: config/settings.php:6 config/settings_pages.php:7
+#: config/settings_pages.php:11 config/settings_pages.php:15
 msgid "Public decisions"
 msgstr "Openbare besluiten"
 
@@ -58,15 +95,11 @@ msgstr "Geen openbare besluiten gevonden."
 msgid "No public decisions found in trash."
 msgstr "Geen openbare besluiten in de prullenbak."
 
-#: config/settings_pages.php:13
-msgid "Save"
-msgstr "Opslaan"
-
 #: config/settings.php:12
 msgid "Portal URL"
 msgstr "Portal URL"
 
-#: config/settings.php:
+#: config/settings.php:13
 msgid "URL including http(s)://"
 msgstr "URL inclusief http(s)://"
 
@@ -78,10 +111,30 @@ msgstr "Portal openbare besluiten item slug"
 msgid "URL for public decisions items in the portal, eg \"besluiten\""
 msgstr "URL voor openbare besluiten in de portal, bv \"besluiten\""
 
+#: config/settings_pages.php:13
+msgid "Save"
+msgstr "Opslaan"
+
 #: config/taxonomies.php:15
 msgid "Category"
 msgstr "Categorie"
 
 #: config/taxonomies.php:16
 msgid "Categories"
-msgstr "Categorie&euml;n"
+msgstr "Categorieën"
+
+#: src/Besluiten/Foundation/DependencyChecker.php:68
+msgid "The following plugins are required to use the BW Besluiten:"
+msgstr "De volgende plugins zijn vereist om gebruik te maken van BW Besluiten:"
+
+#: src/Besluiten/Foundation/DependencyChecker.php:108
+msgid "Class does not exist"
+msgstr "Klasse bestaat niet"
+
+#: src/Besluiten/Foundation/DependencyChecker.php:128
+msgid "Inactive"
+msgstr "Inactief"
+
+#: src/Besluiten/Foundation/DependencyChecker.php:136
+msgid "Minimal version:"
+msgstr "Minimale versie:"

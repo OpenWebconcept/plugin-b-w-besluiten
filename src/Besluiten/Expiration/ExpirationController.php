@@ -11,14 +11,14 @@ class ExpirationController
      * @param integer $postID
      * @param string $metaKey
      * @param string $metaValue
-     * 
+     *
      * @return void
      */
     public function afterMetaUpdate(int $metaID, int $postID, string $metaKey, $metaValue): void
     {
         $post = get_post($postID);
 
-        if ($post->post_type !== 'public-decision' || wp_is_post_revision($postID) || (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE)) {
+        if ('public-decision' !== $post->post_type || wp_is_post_revision($postID) || (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE)) {
             return;
         }
 
@@ -56,22 +56,22 @@ class ExpirationController
         }
 
         $args = [
-            'post_type' => 'public-decision',
+            'post_type'   => 'public-decision',
             'post_status' => 'publish',
-            'meta_query' => [
+            'meta_query'  => [
                 'relation' => 'AND',
                 [
-                    'key' => '_owc_public_decisions_delete_date',
-                    'value' => date('Y-m-d H:i:s'),
+                    'key'     => '_owc_public_decisions_delete_date',
+                    'value'   => date('Y-m-d H:i:s'),
                     'compare' => '<=',
-                    'type' => 'DATE'
+                    'type'    => 'DATE'
                 ],
                 [
-                    'key' => '_owc_public_decisions_delete_date',
+                    'key'     => '_owc_public_decisions_delete_date',
                     'compare' => 'EXISTS',
                 ],
                 [
-                    'key' => '_owc_public_decisions_expiration_date',
+                    'key'     => '_owc_public_decisions_expiration_date',
                     'compare' => 'EXISTS',
                 ],
             ]

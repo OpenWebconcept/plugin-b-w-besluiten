@@ -66,13 +66,13 @@ class Besluit extends AbstractRepository
             'meta_query' => [
                 'relation' => 'OR',
                 [
-                    'key' => '_owc_public_decisions_expiration_date',
-                    'value' => date('Y-m-d H:i:s'),
+                    'key'     => '_owc_public_decisions_expiration_date',
+                    'value'   => date('Y-m-d H:i:s'),
                     'compare' => '>',
-                    'type' => 'DATE'
+                    'type'    => 'DATE'
                 ],
                 [
-                    'key' => '_owc_public_decisions_expiration_date',
+                    'key'     => '_owc_public_decisions_expiration_date',
                     'compare' => 'NOT EXISTS',
                 ],
             ]

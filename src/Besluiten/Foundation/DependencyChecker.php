@@ -65,7 +65,7 @@ class DependencyChecker
     {
         add_action('admin_notices', function () {
             $list = '<p>' . __(
-                'The following plugins are required to use the OpenPub:',
+                'The following plugins are required to use the BW Besluiten:',
                 'public-decisions'
             ) . '</p><ol>';
 
