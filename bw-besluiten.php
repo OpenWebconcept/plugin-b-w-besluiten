@@ -4,7 +4,7 @@
  * Plugin Name:       Yard | B&W Besluiten
  * Plugin URI:        https://www.openwebconcept.nl/
  * Description:       Mayor and City Counsel Members decisions plug-in enables municipalities to create posts based on the public decisions taken during their weekly meetings.
- * Version:           1.0.3
+ * Version:           1.1.0
  * Author:            Yard | Digital Agency
  * Author URI:        https://www.yard.nl/
  * License:           GPL-3.0
@@ -16,13 +16,13 @@
 /**
  * If this file is called directly, abort.
  */
-if (!defined('WPINC')) {
-    die;
+if (! defined('WPINC')) {
+	die;
 }
 
 define('BW_DIR', basename(__DIR__));
 define('BW_FILE', basename(__FILE__));
-define('BW_VERSION', '1.0.3');
+define('BW_VERSION', '1.1.0');
 
 /**
  * Manual loaded file: the autoloader.
@@ -35,14 +35,14 @@ $autoloader = new OWC\Besluiten\Autoloader();
  * If the openpub-base plugin is used it should be activated first for the combined settings page to work.
  */
 \add_action("activated_plugin", function () {
-    $currentFile    = preg_replace('/(.*)plugins\/(.*)$/', WP_PLUGIN_DIR . "/$2", __FILE__);
-    $plugin         = plugin_basename(trim($currentFile));
-    $activePlugins  = get_option('active_plugins');
-    $pluginKey      = array_search($plugin, $activePlugins);
+	$currentFile = preg_replace('/(.*)plugins\/(.*)$/', WP_PLUGIN_DIR . "/$2", __FILE__);
+	$plugin = plugin_basename(trim($currentFile));
+	$activePlugins = get_option('active_plugins');
+	$pluginKey = array_search($plugin, $activePlugins);
 
-    array_splice($activePlugins, $pluginKey, 1);
-    array_push($activePlugins, $plugin);
-    update_option('active_plugins', $activePlugins);
+	array_splice($activePlugins, $pluginKey, 1);
+	array_push($activePlugins, $plugin);
+	update_option('active_plugins', $activePlugins);
 });
 
 /**
@@ -58,6 +58,6 @@ OWC\Besluiten\Foundation\Plugin::setupAndTeardown();
  * and wp_loaded action hooks.
  */
 \add_action('plugins_loaded', function () {
-    $plugin = new OWC\Besluiten\Foundation\Plugin(__DIR__);
-    $plugin->boot();
+	$plugin = new OWC\Besluiten\Foundation\Plugin(__DIR__);
+	$plugin->boot();
 }, 10);
