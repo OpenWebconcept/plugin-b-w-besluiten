@@ -1,31 +1,37 @@
 # CHANGELOG
 
+## [1.1.1]
+
+### Fix
+
+- Connected besluiten query in ConnectedField retrieves expired items
+
 ## [1.1.0]
 
-### Features
+### Feat
 
 - DependencyChecker validates 'alt_file' first
 
 ## [1.0.3]
 
-### Features
+### Feat
 
 - Add expired field to API
 
 ## [1.0.2]
 
-### Features
+### Feat
 
 - Add connected public-decisions, in api, based on taxonomy (public-decision-category)
 
 ## [1.0.1]
 
-### Features
+### Feat
 
 - Add taxonomy 'public-decision-category'.
 
 ## [1.0.0]
 
-### Features
+### Feat
 
 - Initial release
