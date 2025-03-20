@@ -35,7 +35,7 @@ class ExpiredField extends CreatesFields
         }
         $timezone = \get_option('timezone_string');
         $date     = \DateTime::createFromFormat('Y-m-d H:i:s', implode('', $status), new \DateTimeZone($timezone));
-        $dateNow  = new \DateTime(null, new \DateTimeZone($timezone));
+        $dateNow  = new \DateTime('now', new \DateTimeZone($timezone));
 
         return [
             'status'  => ($date < $dateNow),

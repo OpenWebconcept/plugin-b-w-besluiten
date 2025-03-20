@@ -2,7 +2,7 @@
 
 namespace OWC\Besluiten\Traits;
 
-trait CheckPluginActive
+abstract class CheckPluginActive
 {
     public static function isPluginActive(string $file): bool
     {
